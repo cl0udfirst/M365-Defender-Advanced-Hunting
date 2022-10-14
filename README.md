@@ -35,8 +35,9 @@ DeviceProcessEvents
 ```
 -----------
 
-## Querying attempts to dump the LSASS process memory comsvcs.dll:
+### Querying attempts to dump the LSASS process memory comsvcs.dll:
 
+```
 let startTime = ago(7d);
 let endTime = now();
 DeviceProcessEvents
@@ -46,5 +47,6 @@ and ProcessCommandLine has 'comsvcs.dll'
 and ProcessCommandLine has_any ('full','MiniDump')
 | where not (ProcessCommandLine matches regex @'{[\w\d]{8}-[\w\d]{4}-[\w\d]{4}-[\w\d]{4}-[\w\d]{12}}'
 and ProcessCommandLine matches regex @'(\d{2}_){3}' )
+```
 
 ------------
