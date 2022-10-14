@@ -1,6 +1,6 @@
 # Collection of M365 Defender Advanced Hunting querys
 
-## Powershell execution with base64 encoded string
+### Powershell execution with base64 encoded string
 
 ```
 DeviceProcessEvents
@@ -13,7 +13,7 @@ DeviceProcessEvents
 
 -----------
 
-## Detect Impacket WMIexec usage on a device
+### Detect Impacket WMIexec usage on a device
 
 ```
 DeviceProcessEvents
@@ -23,7 +23,7 @@ DeviceProcessEvents
 | where InitiatingProcessFileName =~ "WmiPrvSE.exe"
 ```
 
-## This query has the same purpose as above, but it also groups all the commands launched using Impacket WMIexec on the device:
+### This query has the same purpose as above, but it also groups all the commands launched using Impacket WMIexec on the device:
 
 ```
 | where Timestamp >= ago(7d)
