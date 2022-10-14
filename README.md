@@ -23,7 +23,7 @@ DeviceProcessEvents
 | where InitiatingProcessFileName =~ "WmiPrvSE.exe"
 ```
 
-### This query has the same purpose as above, but it also groups all the commands launched using Impacket WMIexec on the device:
+### Same purpose as above, but it also groups all the commands launched using Impacket WMIexec on the device:
 
 ```
 | where Timestamp >= ago(7d)
